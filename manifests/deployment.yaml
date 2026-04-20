@@ -5,7 +5,7 @@ metadata:
   labels:
     app: go-simple-webserver
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       app: go-simple-webserver
@@ -19,6 +19,10 @@ spec:
           image: ghcr.io/andreistan26/ci_cd_lab:latest
           ports:
             - containerPort: 8080
+      syncPolicy:
+        automated:
+          enabled: true
+
 
 
 
